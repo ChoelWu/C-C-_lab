@@ -1,2 +1,4 @@
 
-test/.idea
+file/.idea
+file/cmake-build-debug
+*.text
