@@ -122,6 +122,33 @@ file/fast:
 	$(MAKE) -f CMakeFiles\file.dir\build.make CMakeFiles/file.dir/build
 .PHONY : file/fast
 
+demo02.obj: demo02.c.obj
+
+.PHONY : demo02.obj
+
+# target to build an object file
+demo02.c.obj:
+	$(MAKE) -f CMakeFiles\file.dir\build.make CMakeFiles/file.dir/demo02.c.obj
+.PHONY : demo02.c.obj
+
+demo02.i: demo02.c.i
+
+.PHONY : demo02.i
+
+# target to preprocess a source file
+demo02.c.i:
+	$(MAKE) -f CMakeFiles\file.dir\build.make CMakeFiles/file.dir/demo02.c.i
+.PHONY : demo02.c.i
+
+demo02.s: demo02.c.s
+
+.PHONY : demo02.s
+
+# target to generate assembly for a file
+demo02.c.s:
+	$(MAKE) -f CMakeFiles\file.dir\build.make CMakeFiles/file.dir/demo02.c.s
+.PHONY : demo02.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -158,6 +185,9 @@ help:
 	@echo ... file
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... demo02.obj
+	@echo ... demo02.i
+	@echo ... demo02.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

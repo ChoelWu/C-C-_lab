@@ -1,4 +1,7 @@
-
-file/.idea
-file/cmake-build-debug
-*.text
+file/.idea/*.*
+file/cmake-build-debug/*.*
+*.txt
+file/.idea/workspace.xml
+file/cmake-build-debug/*
+*.txt
+*.txt

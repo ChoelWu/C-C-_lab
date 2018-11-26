@@ -76,6 +76,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/www/C-C-_lab/file/demo02.c">
+			<Option target="file"/>
+		</Unit>
 		<Unit filename="D:/www/C-C-_lab/file/main.c">
 			<Option target="file"/>
 		</Unit>
