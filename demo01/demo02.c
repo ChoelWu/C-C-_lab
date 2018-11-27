@@ -21,8 +21,11 @@ int main() {
     node *A = NULL, *B = NULL, *C = NULL, *a = NULL, *b = NULL;
     printf("请输入A集合的元素，-1结束输入\n");
     A = createSeq();
+    printf("请输入B集合的元素，-1结束输入\n");
+    B = createSeq();
 //    C = getMixed(A, B);
     outputSeq(A);
+    outputSeq(B);
     return 0;
 }
 
@@ -74,9 +77,9 @@ int iterationSeq(int data, node *N) {
  * @param C
  * @return
  */
-int outputSeq(node *C) {
+int outputSeq(node *N) {
     node *cp = NULL;
-    cp = C;
+    cp = N;
     printf("元素为:");
     while (cp != NULL) {
         printf("%d-", cp->data);
