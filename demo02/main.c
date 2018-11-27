@@ -19,9 +19,9 @@ node *createSeq();
 
 int main() {
     node *A = NULL, *B = NULL, *C = NULL, *a = NULL, *b = NULL;
-    printf("ÇëÊäÈëA¼¯ºÏµÄÔªËØ£¬-1½áÊøÊäÈë\n");
+    printf("è¯·è¾“å…¥Aé›†åˆçš„å…ƒç´ ï¼Œ-1ç»“æŸè¾“å…¥\n");
     A = createSeq();
-    printf("ÇëÊäÈëB¼¯ºÏµÄÔªËØ£¬-1½áÊøÊäÈë\n");
+    printf("è¯·è¾“å…¥Bé›†åˆçš„å…ƒç´ ï¼Œ-1ç»“æŸè¾“å…¥\n");
     B = createSeq();
 //    C = getMixed(A, B);
     outputSeq(A);
@@ -30,7 +30,7 @@ int main() {
 }
 
 /**
- * µÃµ½¼¯ºÏµÄ½»¼¯
+ * å¾—åˆ°é›†åˆçš„äº¤é›†
  * @param A
  * @param B
  * @return
@@ -54,7 +54,7 @@ node *getMixed(node *A, node *B) {
 }
 
 /**
- * ±éÀúµ¥Á´±í²¢²éÕÒÔªËØdata
+ * éå†å•é“¾è¡¨å¹¶æŸ¥æ‰¾å…ƒç´ data
  * @param data
  * @param B
  * @return
@@ -73,14 +73,14 @@ int iterationSeq(int data, node *N) {
 }
 
 /**
- * Êä³öµ¥Á´±í
+ * è¾“å‡ºå•é“¾è¡¨
  * @param C
  * @return
  */
 int outputSeq(node *N) {
     node *cp = NULL;
     cp = N;
-    printf("ÔªËØÎª:");
+    printf("å…ƒç´ ä¸º:");
     while (cp != NULL) {
         printf("%d-", cp->data);
         cp = cp->next;
@@ -89,7 +89,7 @@ int outputSeq(node *N) {
 }
 
 /**
- * ÎŞÍ·½ÚµãÍ·²¿²åÈë·¨´´½¨Á´±í
+ * æ— å¤´èŠ‚ç‚¹å¤´éƒ¨æ’å…¥æ³•åˆ›å»ºé“¾è¡¨
  * @return
  */
 //node *createSeq() {
@@ -110,7 +110,7 @@ int outputSeq(node *N) {
 //}
 
 /**
- * ÎŞÍ·½áµãÎ²²¿²åÈë·¨
+ * æ— å¤´ç»“ç‚¹å°¾éƒ¨æ’å…¥æ³•
  * @return
  */
 node *createSeq() {
