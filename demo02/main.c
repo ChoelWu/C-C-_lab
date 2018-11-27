@@ -23,9 +23,8 @@ int main() {
     A = createSeq();
     printf("请输入B集合的元素，-1结束输入\n");
     B = createSeq();
-//    C = getMixed(A, B);
-    outputSeq(A);
-    outputSeq(B);
+    C = getMixed(A, B);
+    outputSeq(C);
     return 0;
 }
 
@@ -39,7 +38,7 @@ node *getMixed(node *A, node *B) {
     int rel;
     node *p = NULL, *C = NULL, *c = NULL;
     p = A;
-    while (!p->next) {
+    while (p != NULL) {
         rel = iterationSeq(p->data, B);
         if (rel) {
             c->next = p;
