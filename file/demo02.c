@@ -4,56 +4,40 @@
 //
 // Created by Choel on 2018/11/26.
 //
-struct Node {
+typedef struct NODE {
     int data;
-    struct Node *next;
-};
+    struct NODE *next;
+} node;
 
-int iterationB(int data, struct Node *B);
+int iterationSeq(int data, node *B);
 
-struct Node *getC(struct Node *A, struct Node *B);
+node *getMixed(node *A, node *B);
 
-int outputC(struct Node *C);
+int outputSeq(node *C);
+
+node *createSeq();
 
 int main() {
-    struct Node *A = NULL, *B = NULL, *C = NULL, *a = NULL, *b = NULL;
-    int flag1 = 1, flag2 = 1, input;
-    A = a = (struct Node *) malloc(sizeof(struct Node));
-    printf("璇疯緭鍏闆嗗悎鐨勫厓绱狅紝-1缁撴潫杈撳叆\n");
-    do {
-        scanf("%d", &input);
-        if (input == -1) {
-            flag1 = 0;
-        } else {
-            a->next = (struct Node *) malloc(sizeof(struct Node));
-            a = a->next;
-            a->data = input;
-            a->next = NULL;
-        }
-    } while (flag1);
-    printf("闆嗗悎A杈撳叆瀹屾垚锛岃杈撳叆A闆嗗悎鐨勫厓绱狅紝-1缁撴潫杈撳叆\n");
-    do {
-        scanf("%d", &input);
-        if (input == -1) {
-            flag2 = 0;
-        } else {
-            b->next = (struct Node *) malloc(sizeof(struct Node));
-            b = b->next;
-            b->data = input;
-            b->next = NULL;
-        }
-    } while (flag2);
-    C = getC(A, B);
-    outputC(C);
+    node *A = NULL, *B = NULL, *C = NULL, *a = NULL, *b = NULL;
+    printf("请输入A集合的元素，-1结束输入\n");
+    A = createSeq();
+//    C = getMixed(A, B);
+    outputSeq(A);
     return 0;
 }
 
-struct Node *getC(struct Node *A, struct Node *B) {
-    int i, j, rel;
-    struct Node *p = NULL, *C = NULL, *c = NULL;
+/**
+ * 得到集合的交集
+ * @param A
+ * @param B
+ * @return
+ */
+node *getMixed(node *A, node *B) {
+    int rel;
+    node *p = NULL, *C = NULL, *c = NULL;
     p = A;
     while (!p->next) {
-        rel = iterationB(p->data, B);
+        rel = iterationSeq(p->data, B);
         if (rel) {
             c->next = p;
             c = c->next;
@@ -66,9 +50,15 @@ struct Node *getC(struct Node *A, struct Node *B) {
     return C;
 }
 
-int iterationB(int data, struct Node *B) {
-    struct Node *q;
-    q = B;
+/**
+ * 遍历单链表并查找元素data
+ * @param data
+ * @param B
+ * @return
+ */
+int iterationSeq(int data, node *N) {
+    node *q;
+    q = N;
     while (!q->next) {
         if (q->data == data) {
             return 1;
@@ -79,6 +69,65 @@ int iterationB(int data, struct Node *B) {
     return 0;
 }
 
-int outputC(struct Node *C) {
+/**
+ * 输出单链表
+ * @param C
+ * @return
+ */
+int outputSeq(node *C) {
+    node *cp = NULL;
+    cp = C;
+    printf("元素为:");
+    while (cp != NULL) {
+        printf("%d-", cp->data);
+        cp = cp->next;
+    }
     return 0;
+}
+
+/**
+ * 无头节点头部插入法创建链表
+ * @return
+ */
+//node *createSeq() {
+//    node *n = NULL, *N = NULL;
+//    int input, flag = 1;
+//    do {
+//        scanf("%d", &input);
+//        if (input == -1) {
+//            flag = 0;
+//        } else {
+//            n = (node *) malloc(sizeof(node));
+//            n->next = N;
+//            n->data = input;
+//            N = n;
+//        }
+//    } while (flag);
+//    return N;
+//}
+
+/**
+ * 无头结点尾部插入法
+ * @return
+ */
+node *createSeq() {
+    node *n = NULL, *N = NULL, *tmp = NULL;
+    int input, flag = 1;
+    while (flag) {
+        scanf("%d", &input);
+        if (input == -1) {
+            flag = 0;
+        } else {
+            tmp = (node *) malloc(sizeof(node));
+            tmp->data = input;
+            tmp->next = NULL;
+            if (N == NULL) {
+                N = n = tmp;
+            } else {
+                n->next = tmp;
+                n = n->next;
+            }
+        }
+    }
+    return N;
 }

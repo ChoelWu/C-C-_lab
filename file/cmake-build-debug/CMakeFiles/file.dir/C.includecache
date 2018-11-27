@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-D:/www/C-C-_lab/file/main.c
+D:/www/C-C-_lab/file/demo02.c
 stdio.h
 -
 stdlib.h
